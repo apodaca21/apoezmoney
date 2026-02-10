@@ -1,0 +1,66 @@
+/* EFECTO BORDER BEAM ROTATORIO */
+.neon-card {
+  position: relative;
+  width: 350px;
+  height: 480px;
+  background: #0f172a; /* Slate 900 */
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s;
+  margin: 10px;
+}
+
+.neon-card:hover {
+  transform: translateY(-10px);
+}
+
+/* Variante 1: AZUL CYAN (Por defecto) */
+.neon-card::before {
+  content: '';
+  position: absolute;
+  width: 150%;
+  height: 150%;
+  background: conic-gradient(from 0deg, transparent 0deg, #06b6d4 60deg, transparent 120deg); /* Cyan */
+  animation: rotate 4s linear infinite;
+}
+
+/* Variante 2: AZUL PROFUNDO / ELÉCTRICO (En vez de rosa) */
+.neon-card.deep-blue::before {
+  background: conic-gradient(from 0deg, transparent 0deg, #3b82f6 60deg, transparent 120deg); /* Royal Blue */
+}
+
+/* Tapa oscura interna */
+.neon-card::after {
+  content: '';
+  position: absolute;
+  inset: 3px; 
+  background: #1e293b; /* Slate 800 */
+  border-radius: 18px;
+}
+
+.card-content-neon {
+  position: relative;
+  z-index: 10;
+  padding: 2rem;
+  text-align: center;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.neon-btn {
+  margin-top: 30px;
+  padding: 12px 30px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: bold;
+}
