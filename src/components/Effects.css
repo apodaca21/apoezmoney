@@ -1,104 +1,47 @@
-:root {
-  --bg-dark: #0f172a;
-  --bg-card: #1e293b;
-  --accent-blue: #3b82f6;
-  --accent-cyan: #06b6d4;
-  --text-primary: #f8fafc;
-  --text-secondary: #94a3b8;
-}
+/* --- HERO RESPONSIVO (Agregar al final de Effects.css) --- */
 
-/* --- ESTILOS RESPONSIVOS (MOBILE FIRST) --- */
-.bg-professional {
-  background-color: var(--bg-dark);
-  background-image: radial-gradient(circle at 50% 0%, #1e293b 0%, #0f172a 70%);
-  min-height: 100vh;
-  overflow-x: hidden; /* Evita scroll horizontal en móvil */
-}
-
-/* Títulos de Sección con Efecto Sencillo y Elegante */
-.section-title-wrapper {
-  margin-bottom: 3rem;
-  text-align: center;
-  padding: 0 1rem;
-}
-
-.section-title-gradient {
-  font-size: clamp(2rem, 5vw, 3.5rem); /* Se adapta al tamaño de pantalla */
-  font-weight: 800;
-  background: linear-gradient(to right, #60a5fa, #fff, #60a5fa);
-  background-size: 200% auto;
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  animation: shine 5s linear infinite;
-}
-
-/* Grillas Responsivas */
-.responsive-grid {
-  display: grid;
-  /* En móvil 1 columna, en PC automático */
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1rem;
-}
-
-/* Tarjeta Base Profesional */
-.pro-card {
-  background: rgba(30, 41, 59, 0.7);
-  border: 1px solid rgba(148, 163, 184, 0.1);
-  border-radius: 16px;
-  backdrop-filter: blur(10px);
-  transition: all 0.3s ease;
-  overflow: hidden;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-  height: 100%; /* Para que todas tengan la misma altura */
+/* Contenedor Flex que se adapta */
+.hero-flex-responsive {
   display: flex;
-  flex-direction: column;
-}
-
-.pro-card:hover {
-  transform: translateY(-5px);
-  border-color: var(--accent-blue);
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
-}
-
-/* Botones */
-.btn-pro {
-  display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  padding: 12px 24px;
-  background: linear-gradient(90deg, var(--accent-blue), var(--accent-cyan));
-  color: white;
-  border: none;
-  border-radius: 8px;
-  font-weight: 600;
-  text-decoration: none;
-  cursor: pointer;
-  transition: opacity 0.2s;
-  margin-top: auto; /* Empuja el botón al fondo de la tarjeta */
+  gap: 4rem;
+  /* En PC: Foto izq, Texto der. En Móvil (wrap-reverse): Texto arriba, Foto abajo */
+  flex-wrap: wrap-reverse; 
+  width: 100%;
 }
 
-.btn-pro:hover { opacity: 0.9; }
-.btn-disabled { background: #334155; color: #64748b; cursor: not-allowed; }
+/* Contenedor de Texto */
+.hero-text-responsive {
+  text-align: left; /* En PC alineado a la izquierda */
+  max-width: 600px;
+}
 
-/* --- ANIMACIONES DE FONDO --- */
-@keyframes shine { to { background-position: 200% center; } }
-@keyframes rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
-
-/* --- AJUSTES ESPECÍFICOS PARA MÓVIL --- */
+/* Reglas SOLO para Celulares (iPhone, Android) */
 @media (max-width: 768px) {
-  .section-padding { padding: 4rem 1rem !important; }
+  .hero-flex-responsive {
+    gap: 2rem;
+    padding-top: 1rem;
+    flex-direction: column-reverse; /* Fuerza Texto Arriba, Foto Abajo */
+  }
+
+  .hero-text-responsive {
+    text-align: center !important; /* Fuerza el centrado */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 0 1.5rem; /* Margen para que no pegue a los bordes */
+  }
+
+  /* Ajuste de tamaño de la letra del nombre en móvil */
+  .hero-name-responsive {
+    font-size: 3.5rem !important; 
+    line-height: 1.1;
+  }
   
-  /* Hero adjustments */
-  .hero-flex { flex-direction: column-reverse; text-align: center; gap: 2rem !important; }
-  .hero-photo { width: 280px !important; height: 280px !important; margin-bottom: 1rem; }
-  .hero-title { font-size: 3rem !important; }
-  
-  /* Landing cards en móvil */
-  .landing-flex { flex-direction: column; align-items: center; }
-  .neon-card { width: 100% !important; max-width: 350px; }
+  /* Ajuste del subtítulo en móvil */
+  .hero-subtitle-responsive {
+    font-size: 1.2rem !important;
+  }
 }
