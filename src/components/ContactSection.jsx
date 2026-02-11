@@ -1,5 +1,5 @@
 import React from 'react';
-import { Mail, Instagram, Facebook, MessageCircle } from 'lucide-react';
+import { Mail, Instagram, MessageCircle } from 'lucide-react';
 import './Effects.css';
 
 export default function ContactSection() {
@@ -16,20 +16,29 @@ export default function ContactSection() {
         </p>
 
         <div style={{ display: 'flex', justifyContent: 'center', gap: '2rem', flexWrap: 'wrap', marginBottom: '4rem' }}>
-          <a href="mailto:tu@email.com" className="btn-pro" style={{ background: '#334155' }}>
+          
+          {/* CORREO */}
+          <a href="mailto:malejandroapodaca@gmail.com" className="btn-pro" style={{ background: '#334155' }}>
             <Mail size={20} /> Enviar Correo
           </a>
-          <a href="https://instagram.com" target="_blank" className="btn-pro" style={{ background: '#334155' }}>
+          
+          {/* INSTAGRAM */}
+          <a href="https://instagram.com/aaapodaca21" target="_blank" rel="noopener noreferrer" className="btn-pro" style={{ background: '#334155' }}>
             <Instagram size={20} /> Instagram
           </a>
-          <a href="https://facebook.com" target="_blank" className="btn-pro" style={{ background: '#334155' }}>
-            <Facebook size={20} /> Facebook
-          </a>
+
         </div>
 
-        <button className="btn-pro" style={{ padding: '15px 40px', fontSize: '1.1rem' }}>
+        {/* WHATSAPP (Enlace directo) */}
+        <a 
+          href="https://wa.me/526647542155" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="btn-pro" 
+          style={{ padding: '15px 40px', fontSize: '1.1rem', display: 'inline-flex', alignItems: 'center', gap: '10px' }}
+        >
           <MessageCircle size={24} /> Iniciar Chat en WhatsApp
-        </button>
+        </a>
 
       </div>
     </section>
