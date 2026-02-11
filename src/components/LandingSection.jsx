@@ -52,7 +52,7 @@ export default function LandingSection() {
             
             {/* Botón Activo */}
             <a 
-              href="https://apoezmoney.vercel.app/" 
+              href="https://apodacaportfolioweb.vercel.app//" 
               target="_blank" 
               rel="noopener noreferrer" 
               className="neon-btn" 
