@@ -4,22 +4,24 @@ import './Effects.css';
 
 const SportsCard = ({ title, subtitle, Icon, link }) => {
   return (
-    <div className="pro-card" style={{ padding: '2rem' }}>
+    <div className="pro-card"> 
+      
+      {/* Icono con fondo azul brillante */}
       <div style={{ 
-        width: '50px', height: '50px', 
+        width: '60px', height: '60px', 
         background: 'rgba(59, 130, 246, 0.1)', 
-        borderRadius: '12px', 
+        borderRadius: '16px', 
         display: 'flex', alignItems: 'center', justifyContent: 'center',
-        color: '#3b82f6', marginBottom: '1.5rem'
+        color: '#60a5fa', marginBottom: '1.5rem'
       }}>
-        <Icon size={28} />
+        <Icon size={32} />
       </div>
 
-      <h3 style={{ color: 'var(--text-primary)', fontSize: '1.5rem', marginBottom: '0.5rem', fontWeight: 'bold' }}>
+      <h3 style={{ fontSize: '1.6rem', marginBottom: '0.8rem', fontWeight: 'bold', color: 'var(--text-primary)' }}>
         {title}
       </h3>
       
-      <p style={{ color: 'var(--text-secondary)', lineHeight: '1.6', flex: 1, marginBottom: '2rem' }}>
+      <p style={{ marginBottom: '2rem', flex: 1, color: 'var(--text-secondary)', fontSize: '1rem' }}>
         {subtitle}
       </p>
       
@@ -38,15 +40,15 @@ const SportsCard = ({ title, subtitle, Icon, link }) => {
 
 export default function SportsSection() {
   return (
-    <section className="section-padding" style={{ padding: '6rem 2rem' }}>
+    <section style={{ padding: '6rem 0' }}>
       
-      {/* Encabezado con efecto */}
-      <div className="section-title-wrapper">
+      {/* ENCABEZADO CENTRADO */}
+      <div className="section-header-container">
         <h2 className="section-title-gradient">Deportes & Ligas</h2>
-        <p style={{ color: '#94a3b8', marginTop: '1rem' }}>Plataformas de alto rendimiento</p>
+        <p className="section-subtitle">Plataformas dinámicas de alto rendimiento</p>
       </div>
       
-      {/* Grid Responsivo */}
+      {/* GRID CENTRADO */}
       <div className="responsive-grid">
         <SportsCard 
           Icon={Trophy} 

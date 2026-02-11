@@ -10,28 +10,31 @@ const MenuCard = ({ title, Icon, description, link }) => {
       target="_blank"
       rel="noopener noreferrer"
       className="pro-card"
-      style={{ display: 'flex', flexDirection: 'column', textDecoration: 'none', height: '100%' }}
-      whileHover={{ y: -10 }}
+      style={{ textDecoration: 'none', padding: '0' }} /* Padding 0 para que la imagen toque los bordes */
+      whileHover={{ y: -8 }}
     >
-      {/* Contenedor de Imagen/Icono */}
+      {/* Contenedor de Imagen (Fondo Azul Oscuro) */}
       <div style={{ 
         height: '200px', 
-        background: '#0f172a', 
+        background: '#1e293b', /* Azul Slate Oscuro */
         display: 'flex', alignItems: 'center', justifyContent: 'center',
-        borderBottom: '1px solid rgba(255,255,255,0.05)', color: '#3b82f6'
+        borderBottom: '1px solid rgba(255,255,255,0.05)', 
+        color: '#60a5fa'
       }}>
-        <Icon size={64} strokeWidth={1.5} />
+        <Icon size={70} strokeWidth={1.5} />
       </div>
 
-      <div style={{ padding: '2rem', flex: 1, display: 'flex', flexDirection: 'column' }}>
-        <h3 style={{ color: 'var(--text-primary)', fontSize: '1.4rem', fontWeight: 'bold', marginBottom: '0.5rem' }}>
+      {/* Contenido de Texto con Padding */}
+      <div style={{ padding: '2rem', display: 'flex', flexDirection: 'column', flex: 1 }}>
+        <h3 style={{ fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '0.5rem', color: 'var(--text-primary)' }}>
           {title}
         </h3>
-        <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', lineHeight: '1.5', flex: 1 }}>
+        <p style={{ fontSize: '0.95rem', marginBottom: '1.5rem', flex: 1, color: 'var(--text-secondary)' }}>
           {description}
         </p>
-        <div style={{ marginTop: '1.5rem', color: 'var(--accent-blue)', fontWeight: '600', fontSize: '0.9rem' }}>
-          Visitar Sitio &rarr;
+        
+        <div style={{ color: 'var(--accent-cyan)', fontWeight: '700', fontSize: '0.95rem', marginTop: 'auto', display: 'flex', alignItems: 'center', gap: '5px' }}>
+          Visitar Sitio <span>&rarr;</span>
         </div>
       </div>
     </motion.a>
@@ -40,41 +43,34 @@ const MenuCard = ({ title, Icon, description, link }) => {
 
 export default function MenuSection() {
   return (
-    <section className="section-padding" style={{ padding: '6rem 2rem', background: 'rgba(0,0,0,0.2)' }}>
+    <section style={{ padding: '6rem 0', background: 'rgba(0,0,0,0.2)' }}>
       
-      {/* Encabezado con efecto */}
-      <div className="section-title-wrapper">
+      {/* ENCABEZADO CENTRADO */}
+      <div className="section-header-container">
         <h2 className="section-title-gradient">E-Commerce & Catálogos</h2>
-        <p style={{ color: '#94a3b8', marginTop: '1rem' }}>Soluciones de venta y gestión de inventario</p>
+        <p className="section-subtitle">Soluciones de venta y gestión de inventario</p>
       </div>
 
-      {/* Grilla responsiva adaptada para 3 elementos */}
+      {/* GRID CENTRADO */}
       <div className="responsive-grid">
-        
-        {/* CARBUY - Catálogo de Vehículos */}
         <MenuCard 
           title="CarBuy" 
           Icon={Car} 
-          description="Plataforma de exhibición y venta de vehículos con catálogo dinámico y filtros avanzados de búsqueda."
+          description="Plataforma de exhibición y venta de vehículos con catálogo dinámico."
           link="https://carbuy-pearl.vercel.app/"
         />
-
-        {/* C-CAFATERO - Reservas y Menú */}
         <MenuCard 
           title="Cafetería C-Cafetero" 
           Icon={Coffee} 
-          description="Sistema de pedidos digitales, gestión de menú y reservas con pasarela de pagos integrada."
+          description="Sistema de pedidos digitales y reservas con pagos integrados."
           link="https://ccafatero.vercel.app/"
         />
-
-        {/* SPORTS & SERVICES - E-commerce */}
         <MenuCard 
           title="Sports & Services" 
           Icon={ShoppingBag} 
-          description="Tienda en línea completa con carrito de compras, gestión de inventario y panel administrativo."
+          description="Tienda en línea completa con carrito y panel administrativo."
           link="https://sportsandservices.com/"
         />
-
       </div>
     </section>
   );

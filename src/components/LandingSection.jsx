@@ -4,15 +4,22 @@ import './Effects.css';
 
 export default function LandingSection() {
   return (
-    <section className="section-padding" style={{ padding: '6rem 2rem', minHeight: '90vh' }}>
+    <section style={{ padding: '6rem 0', minHeight: '80vh' }}>
       
-      {/* TÍTULO ANIMADO Y RESPONSIVO */}
-      <div className="section-title-wrapper">
+      {/* 1. AQUÍ ESTABA EL ERROR: Agregamos el contenedor centrador */}
+      <div className="section-header-container">
         <h2 className="section-title-gradient">LANDING PAGES</h2>
-        <p style={{ color: '#94a3b8', marginTop: '1rem' }}>Estrategias de conversión visual</p>
+        <p className="section-subtitle">Estrategias de conversión visual</p>
       </div>
       
-      <div className="landing-flex" style={{ display: 'flex', justifyContent: 'center', gap: '4rem', flexWrap: 'wrap' }}>
+      {/* 2. Contenedor de Tarjetas Centradas */}
+      <div style={{ 
+        display: 'flex', 
+        justifyContent: 'center', 
+        gap: '4rem', 
+        flexWrap: 'wrap',
+        padding: '0 1.5rem' 
+      }}>
         
         {/* Tarjeta 1: Azul Cyan */}
         <div className="neon-card">
@@ -25,7 +32,7 @@ export default function LandingSection() {
           </div>
         </div>
 
-        {/* Tarjeta 2: Azul Profundo (Deep Blue) */}
+        {/* Tarjeta 2: Azul Profundo */}
         <div className="neon-card deep-blue">
           <div className="card-content-neon">
             <h3 style={{fontSize: '1.8rem', color:'white', marginBottom:'10px'}}>Portafolio Web</h3>

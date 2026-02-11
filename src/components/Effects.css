@@ -1,47 +1,126 @@
-/* --- HERO RESPONSIVO (Agregar al final de Effects.css) --- */
+:root {
+  --bg-dark: #0f172a; /* Fondo principal (Slate 900) */
+  /* Color de tarjeta: Un azul grisáceo semitransparente, NO negro */
+  --bg-card: rgba(30, 41, 59, 0.7); 
+  --accent-blue: #3b82f6; /* Azul eléctrico */
+  --accent-cyan: #06b6d4; /* Cian neón */
+  --text-primary: #f8fafc; /* Blanco brillante */
+  --text-secondary: #94a3b8; /* Gris azulado */
+}
 
-/* Contenedor Flex que se adapta */
-.hero-flex-responsive {
+/* --- ESTILOS GLOBALES --- */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-dark);
+  color: var(--text-primary);
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+/* Fondo Profesional con toque Azul */
+.bg-professional {
+  background-color: var(--bg-dark);
+  /* Un gradiente radial sutil azulado al centro */
+  background-image: radial-gradient(circle at 50% 0%, #1e293b 0%, #0f172a 70%);
+  min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* --- TARJETAS (Estilo Azul Premium) --- */
+.pro-card {
+  background: var(--bg-card); /* Mantiene el tono azulado */
+  border: 1px solid rgba(148, 163, 184, 0.1); /* Borde sutil */
+  border-radius: 20px; /* Bordes más redondeados y modernos */
+  padding: 2.5rem; /* Más espacio interno para que se vea "bonita" */
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  height: 100%;
   display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.pro-card:hover {
+  transform: translateY(-8px); /* Flota más al pasar el mouse */
+  border-color: var(--accent-blue);
+  box-shadow: 0 20px 40px -5px rgba(59, 130, 246, 0.15); /* Resplandor azul */
+}
+
+/* --- ENCABEZADOS DE SECCIÓN (Centrado Perfecto) --- */
+.section-header-container {
+  display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 4rem;
-  /* En PC: Foto izq, Texto der. En Móvil (wrap-reverse): Texto arriba, Foto abajo */
-  flex-wrap: wrap-reverse; 
+  text-align: center;
+  margin-bottom: 4rem;
+  padding: 0 1rem;
   width: 100%;
 }
 
-/* Contenedor de Texto */
-.hero-text-responsive {
-  text-align: left; /* En PC alineado a la izquierda */
+.section-title-gradient {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 800;
+  margin: 0 0 1rem 0;
+  /* Gradiente Azul-Blanco-Azul */
+  background: linear-gradient(to right, #60a5fa, #fff, #60a5fa);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: shine 5s linear infinite;
+  line-height: 1.1;
+}
+
+.section-subtitle {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
   max-width: 600px;
+  margin: 0 auto;
+  font-weight: 400;
+  letter-spacing: 0.5px;
 }
 
-/* Reglas SOLO para Celulares (iPhone, Android) */
-@media (max-width: 768px) {
-  .hero-flex-responsive {
-    gap: 2rem;
-    padding-top: 1rem;
-    flex-direction: column-reverse; /* Fuerza Texto Arriba, Foto Abajo */
-  }
-
-  .hero-text-responsive {
-    text-align: center !important; /* Fuerza el centrado */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    padding: 0 1.5rem; /* Margen para que no pegue a los bordes */
-  }
-
-  /* Ajuste de tamaño de la letra del nombre en móvil */
-  .hero-name-responsive {
-    font-size: 3.5rem !important; 
-    line-height: 1.1;
-  }
-  
-  /* Ajuste del subtítulo en móvil */
-  .hero-subtitle-responsive {
-    font-size: 1.2rem !important;
-  }
+/* --- GRID RESPONSIVO (El arreglo para PC y Móvil) --- */
+.responsive-grid {
+  display: grid;
+  /* Esto asegura que las columnas tengan un ancho mínimo de 320px pero crezcan */
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  /* ESTO ES LO NUEVO: Centra el contenido si sobran espacios */
+  justify-content: center; 
 }
+
+/* --- BOTONES --- */
+.btn-pro {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 28px;
+  background: linear-gradient(90deg, var(--accent-blue), var(--accent-cyan));
+  color: white !important;
+  border: none;
+  border-radius: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  margin-top: auto;
+  transition: opacity 0.2s;
+  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4); /* Sombra neón */
+}
+.btn-pro:hover { opacity: 0.9; transform: scale(1.02); }
+
+.btn-disabled {
+  background: #334155;
+  color: #64748b !important;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+@keyframes shine { to { background-position: 200% center; } }
