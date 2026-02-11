@@ -17,16 +17,22 @@ export default function ContactSection() {
 
         <div style={{ display: 'flex', justifyContent: 'center', gap: '2rem', flexWrap: 'wrap', marginBottom: '4rem' }}>
           
-          {/* CORREO - Agregamos target="_blank" para forzar la acción */}
-          <a 
-            href="mailto:malejandroapodaca@gmail.com" 
-            target="_blank" 
-            rel="noopener noreferrer"
+          {/* CORREO VISIBLE (Se selecciona al dar clic) */}
+          <div 
             className="btn-pro" 
-            style={{ background: '#334155', textDecoration: 'none' }}
+            style={{ 
+              background: '#334155', 
+              cursor: 'text', 
+              userSelect: 'all',          /* Estándar */
+              WebkitUserSelect: 'all',    /* Safari/Chrome */
+              display: 'flex',
+              alignItems: 'center',
+              gap: '10px'
+            }}
+            title="Haz clic para seleccionar todo"
           >
-            <Mail size={20} /> Enviar Correo
-          </a>
+            <Mail size={20} /> malejandroapodaca@gmail.com
+          </div>
           
           {/* INSTAGRAM */}
           <a 
