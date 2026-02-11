@@ -17,25 +17,37 @@ export default function ContactSection() {
 
         <div style={{ display: 'flex', justifyContent: 'center', gap: '2rem', flexWrap: 'wrap', marginBottom: '4rem' }}>
           
-          {/* CORREO */}
-          <a href="mailto:malejandroapodaca@gmail.com" className="btn-pro" style={{ background: '#334155' }}>
+          {/* CORREO - Agregamos target="_blank" para forzar la acción */}
+          <a 
+            href="mailto:malejandroapodaca@gmail.com" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="btn-pro" 
+            style={{ background: '#334155', textDecoration: 'none' }}
+          >
             <Mail size={20} /> Enviar Correo
           </a>
           
           {/* INSTAGRAM */}
-          <a href="https://instagram.com/aaapodaca21" target="_blank" rel="noopener noreferrer" className="btn-pro" style={{ background: '#334155' }}>
+          <a 
+            href="https://instagram.com/aaapodaca21" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="btn-pro" 
+            style={{ background: '#334155', textDecoration: 'none' }}
+          >
             <Instagram size={20} /> Instagram
           </a>
 
         </div>
 
-        {/* WHATSAPP (Enlace directo) */}
+        {/* WHATSAPP */}
         <a 
           href="https://wa.me/526647542155" 
           target="_blank" 
           rel="noopener noreferrer"
           className="btn-pro" 
-          style={{ padding: '15px 40px', fontSize: '1.1rem', display: 'inline-flex', alignItems: 'center', gap: '10px' }}
+          style={{ padding: '15px 40px', fontSize: '1.1rem', display: 'inline-flex', alignItems: 'center', gap: '10px', textDecoration: 'none' }}
         >
           <MessageCircle size={24} /> Iniciar Chat en WhatsApp
         </a>
