@@ -75,7 +75,7 @@ export default function MenuSection() {
           title="Cafetería C-Cafetero" 
           Icon={Coffee} 
           description="Sistema de pedidos digitales y reservas con pagos integrados."
-          link="https://ccafatero.vercel.app/"
+          link="https://ccafetero.vercel.app/"
         />
 
         {/* 4. SPORTS & SERVICES */}
