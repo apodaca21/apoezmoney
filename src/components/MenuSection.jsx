@@ -64,9 +64,9 @@ export default function MenuSection() {
 
         {/* 2. PIZZERÍA CREATOR (NUEVO) */}
         <MenuCard 
-          title="Pizzería Creator" 
+          title="Pizzería" 
           Icon={Pizza} 
-          description="Sitio web para restaurante italiano con menú digital y gestión de pedidos."
+          description="Sitio web para restaurante menú digital."
           link="https://creatorestaurante.vercel.app/"
         />
 
@@ -74,7 +74,7 @@ export default function MenuSection() {
         <MenuCard 
           title="Cafetería C-Cafetero" 
           Icon={Coffee} 
-          description="Sistema de pedidos digitales y reservas con pagos integrados."
+          description="Sistema de cataologo y reservas con pagos integrados."
           link="https://ccafetero.vercel.app/"
         />
 
