@@ -43,7 +43,7 @@ body {
 }
 
 .pro-card:hover {
-  transform: translateY(-8px); /* Flota más al pasar el mouse */
+  /* Transform animado por GSAP en MenuSection y SportsSection */
   border-color: var(--accent-blue);
   box-shadow: 0 20px 40px -5px rgba(59, 130, 246, 0.15); /* Resplandor azul */
 }
