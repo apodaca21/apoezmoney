@@ -1,32 +1,17 @@
-import React, { useRef, useEffect } from 'react';
+import React from 'react';
+import { motion } from 'framer-motion';
 import { ShoppingBag, Coffee, Car, Pizza } from 'lucide-react';
-import gsap from 'gsap';
 import './Effects.css';
 
 const MenuCard = ({ title, Icon, description, link }) => {
-  const cardRef = useRef(null);
-
-  const handleMouseEnter = () => {
-    if (cardRef.current) {
-      gsap.to(cardRef.current, { scale: 1.02, y: -8, duration: 0.3, ease: 'power2.out' });
-    }
-  };
-  const handleMouseLeave = () => {
-    if (cardRef.current) {
-      gsap.to(cardRef.current, { scale: 1, y: 0, duration: 0.3, ease: 'power2.out' });
-    }
-  };
-
   return (
-    <a
-      ref={cardRef}
+    <motion.a
       href={link}
       target="_blank"
       rel="noopener noreferrer"
       className="pro-card"
       style={{ textDecoration: 'none', padding: '0' }}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
+      whileHover={{ y: -8 }}
     >
       {/* Contenedor de Imagen (Fondo Azul Oscuro) */}
       <div style={{ 
@@ -52,26 +37,11 @@ const MenuCard = ({ title, Icon, description, link }) => {
           Visitar Sitio <span>&rarr;</span>
         </div>
       </div>
-    </a>
+    </motion.a>
   );
 };
 
 export default function MenuSection() {
-  const gridRef = useRef(null);
-
-  useEffect(() => {
-    if (gridRef.current) {
-      const cards = gridRef.current.children;
-      gsap.from(cards, {
-        opacity: 0,
-        y: 30,
-        stagger: 0.1,
-        duration: 0.5,
-        ease: 'power2.out'
-      });
-    }
-  }, []);
-
   return (
     <section style={{ padding: '6rem 0', background: 'rgba(0,0,0,0.2)' }}>
       
@@ -82,7 +52,7 @@ export default function MenuSection() {
       </div>
 
       {/* GRID (Ahora con 4 elementos se acomodará automáticamente) */}
-      <div ref={gridRef} className="responsive-grid">
+      <div className="responsive-grid">
         
         {/* 1. CARBUY */}
         <MenuCard 
