@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ShoppingBag, Coffee, Car, Pizza, Scissors, CreditCard } from 'lucide-react';
+import { ShoppingBag, Coffee, Car, Pizza, Scissors } from 'lucide-react';
 import './Effects.css';
 
 const MenuCard = ({ title, Icon, description, link }) => {
@@ -100,13 +100,6 @@ export default function MenuSection() {
           link="https://novoestilo-rosy.vercel.app/"
         />
 
-        <MenuCard 
-          title="Tarjetas de Fidelidad" 
-          Icon={CreditCard} 
-          description="Solucion para gestion de tarjetas de fidelidad y recompensas."
-          link="https://apodacaservices.vercel.app/"
-        />
-        
       </div>
     </section>
   );
