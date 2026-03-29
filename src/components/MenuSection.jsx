@@ -97,7 +97,7 @@ export default function MenuSection() {
           title="Novo Estilo Barberia" 
           Icon={Scissors} 
           description="Pagina de barberia con presentacion de servicios."
-          link="https://novoestilo-rosy.vercel.app/"
+          link="https://novoestilo.com.mx/"
         />
 
       </div>
