@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ShoppingBag, Coffee, Car, Pizza } from 'lucide-react';
+import { ShoppingBag, Coffee, Car, Pizza, Scissors } from 'lucide-react';
 import './Effects.css';
 
 const MenuCard = ({ title, Icon, description, link }) => {
@@ -85,7 +85,21 @@ export default function MenuSection() {
           description="Tienda en línea completa con carrito y panel administrativo."
           link="https://sportsandservices.com/"
         />
-        
+
+        <MenuCard 
+          title="Apodaca Services" 
+          Icon={Car} 
+          description="Pagina de contacto y presentacion de negocio."
+          link="https://apodacaservices.vercel.app/"
+        />
+
+        <MenuCard 
+          title="Novo Estilo Barberia" 
+          Icon={Scissors} 
+          description="Pagina de barberia con presentacion de servicios."
+          link="https://novoestilo.com.mx/"
+        />
+
       </div>
     </section>
   );

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Trophy, Activity, Calendar, Target } from 'lucide-react';
+import { Target } from 'lucide-react';
 import './Effects.css';
 
 const SportsCard = ({ title, subtitle, Icon, link }) => {
@@ -50,24 +50,6 @@ export default function SportsSection() {
       
       {/* GRID CENTRADO */}
       <div className="responsive-grid">
-        <SportsCard 
-          Icon={Trophy} 
-          title="Liga Libae" 
-          subtitle="Gestión integral de torneos de baloncesto, roles de juego automatizados y perfiles." 
-          link="https://libae.vercel.app/"
-        />
-        <SportsCard 
-          Icon={Activity} 
-          title="Torneo Futbol" 
-          subtitle="Resultados en tiempo real, integración con API de streaming y estadísticas." 
-          link="https://ligafut.vercel.app/"
-        />
-        <SportsCard 
-          Icon={Calendar} 
-          title="Copa Hno. Gabriel Taborin" 
-          subtitle="Sistema de calendario dinámico, tabla de posiciones y registro de equipos." 
-          link="https://copahnogabrieltaborin.vercel.app/"
-        />
         <SportsCard 
           Icon={Target} 
           title="Liga Deportiva" 
