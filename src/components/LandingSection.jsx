@@ -31,7 +31,7 @@ export default function LandingSection() {
             
             {/* Botón Activo */}
             <a 
-              href="https://francorentas.vercel.app/" 
+              href="https://www.francorentas.com/" 
               target="_blank" 
               rel="noopener noreferrer" 
               className="neon-btn" 
